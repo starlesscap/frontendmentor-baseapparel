@@ -215,7 +215,7 @@ footer {
     background: url('../images/icon-error.svg') 85% 13px no-repeat;
   }
   .submit_btn {
-    top: 20px;
+    top: -1px;
     left: -30px;
     width: 70px;
     background:
