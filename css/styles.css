@@ -1,0 +1,233 @@
+/* BODY AND MAIN TEXT */
+body {
+  display: flex;
+  margin: 0 auto 0 auto;
+  background-color: #FFF9F9;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #CE9797;
+  height: 100vh;
+}
+h1 {
+  margin-top: 30%;
+  margin-bottom: 5%;
+  line-height: 1.3;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 3.75rem;
+  color: #413A3A;
+}
+/* STYLING INITIAL 'h1' */
+.initial {
+  font-weight: 300;
+  color: #CE9797;
+}
+p {
+  line-height: 1.5;
+}
+
+a:link, a:visited {
+  color: #F96262;
+  text-decoration: none;
+  background-color: #F8BFBF;
+}
+a:hover {
+  background-color: #F96262;
+  color: white;
+}
+
+
+/* THE MAIN CONTAINER USING FLEXBOX - 2 COLUMNS */
+#main-frame {
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
+
+/* COMING SOON MESSAGE AND PHOTO */
+#message {
+  margin: 0;
+  background-image: url('../images/bg-pattern-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 7% 247px 5% 166px;
+  width: 417px;
+}
+
+#photo {
+  margin: 0;
+  height: 100%;
+  width: 610px;
+  background-image: url('../images/hero-desktop.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+/* EMAIL ADDRESS SIGN UP FORM - USES Z-INDEX TO CREATE SUBMIT BUTTON */
+form {
+  margin-top: 10%;
+}
+
+.email_type, .email_type:default, .email_type:valid, .email_type:active {
+  border: 1px solid #CE9797;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: transparent;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  color: #CE9797;
+  padding: 20px 15px 15px 30px;
+  width: 60%;
+  width: 300px;
+  position: absolute; /*REQUIRES ABSOLUTE POSITION OR SUBMIT BUTTON WILL GO TO THE NEXT LINE*/
+  z-index: 0;
+}
+
+.email_type::placeholder {
+  color: #CE9797;
+}
+
+.email_type:focus {
+  outline: none;
+  border: 3px solid #F96262;
+  padding: 18px 15px 13px 30px;
+}
+
+/* CREATES EXCLAMATION POINT WHERE EMAIL IS INVALID */
+
+/* .email_type:invalid {
+  background: url('../images/icon-error.svg') 270px 13px no-repeat;
+} */
+
+/*CAN'T USE INVALID PSUEDOCLASS BECAUSE INPUT IS REQUIRED AND IT SHOWS WHEN FORM IS BLANK*/
+
+.error_exclaim {
+  background: url('../images/icon-error.svg') 270px 13px no-repeat;
+}
+
+
+/* SUBMIT BUTTON */
+.submit_btn {
+  padding: 20px 15px 18px 30px;
+  border-radius: 26px;
+  border: none;
+  width: 23%;
+  position: relative;
+  z-index: 1;
+  left: 74%;
+  background:
+    url('../images/icon-arrow.svg') 43px 16px no-repeat,
+    linear-gradient(to right, #F8BFBF, #EE8C8C);
+  outline: none;
+  text-align: center;
+  filter: drop-shadow(5px 5px 8px #F8BFBF);
+}
+.submit_btn:hover, .submit_btn:focus {
+  background:
+    url('../images/icon-arrow.svg') 43px 16px no-repeat,
+    linear-gradient(to right, #FAD8D8, #F8C9C9);
+  cursor: pointer;
+}
+
+#error {
+  margin: 2% 0 2% 5%;
+  /* position: absolute; */
+  display: block;
+  color: #F96262;
+}
+
+/* CREDIT SECTION */
+footer {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width:1028px) {
+  body {
+    height: 100%;
+  }
+  #main-frame {
+    height: 100%;
+    width: 100%;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+  #message {
+    background-image: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  #content {
+    padding: 0 5%;
+  }
+
+/* MOVES BRAND LOGO TO TOP IN MOBILE */
+  #logo {
+    display: none;
+  }
+
+  #top_logo {
+    width: 100%;
+    height: 40px;
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  #photo {
+    height: 250px;
+    width: 100%;
+    background-image: url('../images/hero-mobile.jpg');
+    background-position: center;
+    /* background-size: auto; */
+    background-repeat: no-repeat;
+    margin: 20px 0 20px 0;
+  }
+  #form {
+    text-align: center;
+    margin-top: 2%;
+  }
+  h1 {
+    margin-top: 0;
+  }
+  .email_type, .email_type:default, .email_type:valid, .email_type:active {
+    position: relative;
+    left: 0;
+    width: 45%;
+  }
+
+  /* .email_type:invalid {
+    background: url('../images/icon-error.svg') 90% 13px no-repeat;
+  } */
+
+  .error_exclaim {
+    background: url('../images/icon-error.svg') 85% 13px no-repeat;
+  }
+  .submit_btn {
+    top: 20px;
+    left: -30px;
+    width: 70px;
+    background:
+      url('../images/icon-arrow.svg') 28px 16px no-repeat,
+      linear-gradient(to right, #F8BFBF, #EE8C8C);
+  }
+  .submit_btn:hover, .submit_btn:focus {
+    background:
+      url('../images/icon-arrow.svg') 28px 16px no-repeat,
+      linear-gradient(to right, #FAD8D8, #F8C9C9);
+  }
+  #error {
+    margin-top: 5px;
+  }
+}
